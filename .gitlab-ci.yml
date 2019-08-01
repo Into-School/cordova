@@ -1,0 +1,15 @@
+services:
+  - docker:dind
+stages:
+   - package
+ 
+ #Prepare
+cordova-prepare-docker:
+  image: docker:stable
+  stage: prepare
+  script:
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
+    - docker build -t $CI_REGISTRY_IMAGE:lastest .
+    - docker push $CI_REGISTRY_IMAGE:lastest
+  except:
+  - master
