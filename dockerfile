@@ -1,5 +1,4 @@
 FROM circleci/android:api-29-ndk
-RUN sudo add-apt-repository ppa:cwchien/gradle
 RUN sudo apt-get update
 RUN sudo apt-get install gradle
 RUN sudo apt-get update && sudo apt-get install -y --no-install-recommends apt-utils
