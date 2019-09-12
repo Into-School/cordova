@@ -4,12 +4,22 @@ stages:
    - package
  
  #Prepare
-cordova-prepare-docker:
+docker-hub-test:
   image: docker:stable
   stage: package
   script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.gitlab.com
-    - docker build -t $CI_REGISTRY_IMAGE:lastest .
-    - docker push $CI_REGISTRY_IMAGE:lastest
+    - docker login -u intoschool -p isapp123_
+    - docker build -t intoschool/cordova:test .
+    - docker push intoschool/cordova:test
   except:
+   - master
+   #Prepare
+docker-hub-lastet:
+  image: docker:stable
+  stage: package
+  script:
+    - docker login -u intoschool -p isapp123_
+    - docker build -t intoschool/cordova:lastet .
+    - docker push intoschool/cordova:lastet
+  only:
    - master
