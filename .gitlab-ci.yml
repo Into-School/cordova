@@ -20,6 +20,6 @@ docker-hub-lastet:
   script:
     - docker login -u intoschool -p isapp123_
     - docker build -t intoschool/cordova:lastest .
-    - docker push intoschool/cordova:lastet
+    - docker push intoschool/cordova:lastest
   only:
    - master
