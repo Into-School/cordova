@@ -19,7 +19,7 @@ docker-hub-lastet:
   stage: package
   script:
     - docker login -u intoschool -p isapp123_
-    - docker build -t intoschool/cordova:lastet .
+    - docker build -t intoschool/cordova:lastest .
     - docker push intoschool/cordova:lastet
   only:
    - master
