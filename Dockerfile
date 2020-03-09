@@ -6,4 +6,5 @@ RUN sudo chmod 0700 /var/lib/apt/lists/partial
 RUN sudo curl -sL https://deb.nodesource.com/setup_12.x | sudo bash -
 RUN sudo apt-get install -y nodejs
 RUN sudo apt install -y yarn
+RUN npm install --global webpack
 RUN sudo npm install -g cordova
