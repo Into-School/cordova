@@ -8,4 +8,5 @@ RUN sudo apt-get install -y nodejs
 RUN sudo npm install npm@latest -g
 RUN sudo npm install -g webpack
 RUN sudo npm install -g webpack-cli
+RUN sudo npm install -g yarn
 RUN sudo npm install -g cordova
